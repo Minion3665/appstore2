@@ -139,6 +139,10 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+window.onload = function() {
+    modal.style.display="block";
+}
 </script>
 
 </body>
