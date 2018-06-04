@@ -33,6 +33,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
     -webkit-animation-duration: 3s;
     animation-name: slideIn;
     animation-duration: 3s
+    -webkit-animation-name: slideOut;
+    -webkit-animation-duration: 3s;
+    animation-name: slideOut;
+    animation-duration: 3s
 }
 
 /* The Close Button */
@@ -81,6 +85,25 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 
 @keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+@-webkit-keyframes slideOut {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideOut {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeOut {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeOut {
     from {opacity: 0} 
     to {opacity: 1}
 }
