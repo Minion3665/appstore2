@@ -151,15 +151,13 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
-    if (("standalone" in window.navigator) && !window.navigator.standalone){
-    } else {
+    if (window.navigator.standalone == false) {
         modal2.style.display="block";
     }
 }
 
 window.onload = function() {
-    if (("standalone" in window.navigator) && !window.navigator.standalone){
-    } else {
+    if (window.navigator.standalone == false) {
         modal.style.display="block";
     }
 }
