@@ -33,10 +33,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     -webkit-animation-duration: 3s;
     animation-name: slideIn;
     animation-duration: 3s
-    -webkit-animation-name: slideOut;
-    -webkit-animation-duration: 3s;
-    animation-name: slideOut;
-    animation-duration: 3s
 }
 
 /* The Close Button */
@@ -92,21 +88,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
     from {bottom: -300px; opacity: 0} 
     to {bottom: 0; opacity: 1}
 }
-
-@keyframes slideOut {
-    from {bottom: -300px; opacity: 0}
-    to {bottom: 0; opacity: 1}
-}
-
-@-webkit-keyframes fadeOut {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
-
-@keyframes fadeOut {
-    from {opacity: 0} 
-    to {opacity: 1}
-}
 </style>
 </head>
 <body>
@@ -123,14 +104,14 @@ body {font-family: Arial, Helvetica, sans-serif;}
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>Modal Header</h2>
+      <h2>Not an app store</h2>
     </div>
     <div class="modal-body">
-      <p>Some text in the Modal Body</p>
-      <p>Some other text...</p>
+      <p>Ok, so the name could be missleading, but we don't actually install apps</p>
+      <p>We work on the power of adding to home screens and iframes</p>
     </div>
     <div class="modal-footer">
-      <h3>Modal Footer</h3>
+      <h3>Don't try and access us on a pc though, it could get messy</h3>
     </div>
   </div>
 
@@ -154,13 +135,6 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
     modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
 }
 
 window.onload = function() {
