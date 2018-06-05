@@ -152,10 +152,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <p id="p1">Hello World!</p>
 
 <script>
-var url_string = "http://www.example.com/t.html?a=1c&b=3&c=m2-m3-m4-m5"; //window.location.href
+var url_string = window.location.href;
 var url = new URL(url_string);
-var c = url.searchParams.get("c");
-document.getElementById("p1").innerHTML = c;
+var urlparam = url.searchParams.get("url");
 var modal = document.getElementById('myModal');
 var modal2 = document.getElementById('myModal2');
 var span = document.getElementsByClassName("close")[0];
