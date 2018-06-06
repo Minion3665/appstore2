@@ -166,6 +166,10 @@ div:last-child {
 
 </div>
 <script>
+if (location.protocol != 'http:')
+{
+    window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+}
 var modal = document.getElementById('myModal');
 var modal2 = document.getElementById('myModal2');
 var span = document.getElementsByClassName("close")[0];
@@ -195,10 +199,6 @@ var url_string = window.location.href;
 var url = new URL(url_string);
 var urlparam = url.searchParams.get("url");
 if (typeof urlparam !== 'undefined') {
-}
-if (location.protocol != 'http:')
-{
-    window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
 }
 </script>
 
