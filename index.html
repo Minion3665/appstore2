@@ -3,10 +3,12 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="apple-touch-icon" href="logo.jpg"/>
+<link rel="apple-touch-icon" href="logo.jpg">
 <meta name="apple-mobile-web-app-title" content="App Store 2">
 <link rel="apple-touch-startup-image" href="/loading.jpg">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="HandheldFriendly" content="true">
 <title>Add to home screen.</title>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
@@ -159,6 +161,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 </div>
 <script>
+document.addEventListener('touchmove', function (event) {
+  if (event.scale !== 1) { event.preventDefault(); }
+}, false);
 var url_string = window.location.href;
 var url = new URL(url_string);
 var urlparam = url.searchParams.get("url");
@@ -169,12 +174,12 @@ var modal2 = document.getElementById('myModal2');
 var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
     modal.style.display = "none";
-    if (window.navigator.standalone == false) {
+    if (window.navigator.standalone == false || !("standalone" in window.navigator)) {
         modal2.style.display="block";
     }
 }
 window.onload = function() {
-    if (window.navigator.standalone == false) {
+    if (window.navigator.standalone == false || !("standalone" in window.navigator)) {
         modal.style.display="block";
     }
 }
