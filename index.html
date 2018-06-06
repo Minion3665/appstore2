@@ -126,7 +126,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </td>
 </tr>
 </table>
-<iframe class="appFrame" src="https://minion3665.github.io/appstore2/redirect.html?http://hexgl.bkcore.com/play/"></iframe>
+<iframe class="appFrame" src="http://hexgl.bkcore.com/play/"></iframe>
 <noscript><div style="display: block;" class="modal"><div style="color: white;"><h1>JAVACRIPT: WE NEED IT.</h1><h2>Please turn on javascript</h2><h3>If you don't then we will be sad...</h3></div></div></noscript>
 <div id="myModal" class="modal">
   <div class="modal-content">
@@ -164,10 +164,22 @@ body {font-family: Arial, Helvetica, sans-serif;}
 document.addEventListener('touchmove', function (event) {
   if (event.scale !== 1) { event.preventDefault(); }
 }, false);
+var lastTouchEnd = 0;
+document.addEventListener('touchend', function (event) {
+  var now = (new Date()).getTime();
+  if (now - lastTouchEnd <= 300) {
+    event.preventDefault();
+  }
+  lastTouchEnd = now;
+}, false);
 var url_string = window.location.href;
 var url = new URL(url_string);
 var urlparam = url.searchParams.get("url");
 if (typeof urlparam !== 'undefined') {
+}
+if (location.protocol != 'http:')
+{
+    window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
 }
 var modal = document.getElementById('myModal');
 var modal2 = document.getElementById('myModal2');
