@@ -166,6 +166,20 @@ div:last-child {
 
 </div>
 <script>
+var modal = document.getElementById('myModal');
+var modal2 = document.getElementById('myModal2');
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+    if (window.navigator.standalone == false) {
+        modal2.style.display="block";
+    }
+}
+window.onload = function() {
+    if (window.navigator.standalone == false) {
+        modal.style.display="block";
+    }
+}
 document.addEventListener('touchmove', function (event) {
   if (event.scale !== 1) { event.preventDefault(); }
 }, false);
@@ -177,7 +191,6 @@ document.addEventListener('touchend', function (event) {
   }
   lastTouchEnd = now;
 }, false);
-document.getElementsByTagName('div').lastChild.style.display = "none";
 var url_string = window.location.href;
 var url = new URL(url_string);
 var urlparam = url.searchParams.get("url");
@@ -186,20 +199,6 @@ if (typeof urlparam !== 'undefined') {
 if (location.protocol != 'http:')
 {
     window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
-}
-var modal = document.getElementById('myModal');
-var modal2 = document.getElementById('myModal2');
-var span = document.getElementsByClassName("close")[0];
-span.onclick = function() {
-    modal.style.display = "none";
-    if (window.navigator.standalone == false || !("standalone" in window.navigator)) {
-        modal2.style.display="block";
-    }
-}
-window.onload = function() {
-    if (window.navigator.standalone == false || !("standalone" in window.navigator)) {
-        modal.style.display="block";
-    }
 }
 </script>
 
