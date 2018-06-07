@@ -130,10 +130,9 @@ img[alt*="www.000webhost.com"] {
 </td>
 </tr>
 </table>
-<div id="app">
-<iframe class="appFrame" src="http://hexgl.bkcore.com/play/">
+<iframe class="appFrame app" src="http://hexgl.bkcore.com/play/">
 <div style="display: block;" class="modal"><div style="color: white;"><h1>IFRAMES: WE NEED THEM.</h1><h2>Please update your browser</h2><h3>If you don't then we will be sad...</h3></div></div>
-</iframe><div style="background-color: #aa0000; width: 10%; height: 100%; position: fixed; top: 0; right: 0;"></div></div>
+</iframe><div class="app" style="background-color: #aa0000; width: 10%; height: 100%; position: fixed; top: 0; right: 0;"></div></div>
 <noscript><div style="display: block;" class="modal"><div style="color: white;"><h1>JAVACRIPT: WE NEED IT.</h1><h2>Please turn on javascript</h2><h3>If you don't then we will be sad...</h3></div></div></noscript>
 <div id="myModal" class="modal">
   <div class="modal-content">
@@ -201,7 +200,7 @@ document.addEventListener('touchend', function (event) {
 var url_string = window.location.href;
 var url = new URL(url_string);
 var urlparam = url.searchParams.get("url");
-if (typeof urlparam !== 'undefined') {
+if (urlparam == "") {
     if (window.navigator.standalone == true) {
         var x = document.getElementsByClassName("app");
         for (i = 0; i < x.length; i++) {
