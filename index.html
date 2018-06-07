@@ -211,6 +211,12 @@ if (urlparam != null) {
         window.location = "http://appstore2.000webhostapp.com";
     }
 }
+$( document ).on("click",".nav ul li a",
+        function( event ){
+        event.preventDefault();
+        location.href = $( event.target ).attr( "href" );
+        }
+);
 </script>
 
 </body>
