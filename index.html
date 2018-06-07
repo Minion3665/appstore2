@@ -143,7 +143,7 @@ img[alt*="www.000webhost.com"] {
   </tr>
 </table>
 
-<iframe class="appFrame app" id="app" target="app" src="loading.jpg">
+<iframe class="appFrame app" src="loading.jpg">
 <div style="display: block;" class="modal"><div style="color: white;"><h1>IFRAMES: WE NEED THEM.</h1><h2>Please update your browser</h2><h3>If you don't then we will be sad...</h3></div></div>
 </iframe><div class="app" style="background-color: #aa0000; width: 10%; height: 100%; position: fixed; top: 0; right: 0;"></div></div>
 <noscript><div style="display: block;" class="modal"><div style="color: white;"><h1>JAVACRIPT: WE NEED IT.</h1><h2>Please turn on javascript</h2><h3>If you don't then we will be sad...</h3></div></div></noscript>
@@ -184,6 +184,9 @@ img[alt*="www.000webhost.com"] {
 if (location.protocol != 'http:')
 {
     window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
+}
+window.open = function (url, name, features, replace) {
+    document.getElementsByClass('appFrame')[0].src = url;
 }
 var modal = document.getElementById('myModal');
 var modal2 = document.getElementById('myModal2');
