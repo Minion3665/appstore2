@@ -124,7 +124,7 @@ img[alt*="www.000webhost.com"] {
 </style>
 </head>
 <body>
-<a href="http://appstore2.000webhostapp.com?url=example">aaaaa</a>
+<a onclick="document.location.href = 'appstore2.000webhostapp.com?url=example'">aaaaa</a>
 <table width="100%" height="100%" bgcolor="#aa0000">
 <tr height="100%" width="100%">
 <td>
@@ -211,12 +211,6 @@ if (urlparam != null) {
         window.location = "http://appstore2.000webhostapp.com";
     }
 }
-$( document ).on("click",".nav ul li a",
-        function( event ){
-        event.preventDefault();
-        location.href = $( event.target ).attr( "href" );
-        }
-);
 </script>
 
 </body>
