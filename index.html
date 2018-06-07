@@ -218,7 +218,7 @@ if (urlparam != null) {
         for (i = 0; i < x.length; i++) {
             x[i].style.display = "block";
         }
-        document.getElementByClassName("app").src = urlparam;
+        document.getElementsByClassName("app")[0].src = urlparam;
     } else {
         window.location = "http://appstore2.000webhostapp.com";
     }
