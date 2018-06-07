@@ -200,7 +200,8 @@ document.addEventListener('touchend', function (event) {
 var url_string = window.location.href;
 var url = new URL(url_string);
 var urlparam = url.searchParams.get("url");
-if (urlparam == "") {
+document.write(urlparam);
+if (urlparam != "") {
     if (window.navigator.standalone == true) {
         var x = document.getElementsByClassName("app");
         for (i = 0; i < x.length; i++) {
