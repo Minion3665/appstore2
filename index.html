@@ -172,10 +172,13 @@ http://bravebunny.co/curvatron/
 </div>
 <div></div>
 <script>
+/*
+sadly by taking it offline I broke it, github now requires https. Not all games will work...
 if (location.protocol != 'http:')
 {
     window.location.href = "http:" + window.location.href.substring(window.location.protocol.length);
 }
+*/
 window.open = function (url, name, features, replace) {
     document.getElementsByClass('appFrame')[0].src = url;
 }
@@ -215,7 +218,7 @@ if (urlparam != null) {
         }
         document.getElementsByClassName("app")[0].src = urlparam;
     } else {
-        window.location = "http://appstore2.000webhostapp.com";
+        window.location = "https://minion3665.github.io/appstore2/";
     }
 }
 if(("standalone" in window.navigator) && window.navigator.standalone){
